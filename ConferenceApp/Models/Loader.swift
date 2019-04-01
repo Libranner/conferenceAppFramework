@@ -10,12 +10,12 @@ import Foundation
 
 struct Loader {
 //Ejemplo
-  static func load() {
+  /*static func load() {
     let conference = Conference(name: "", details: "")
     
     for conference.tracks {
       conference.tracks.append(Track())
     }
-  }
+  }*/
 
 }
