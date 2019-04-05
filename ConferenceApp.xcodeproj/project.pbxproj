@@ -15,6 +15,9 @@
 		EE0B6EAD22455D66006E7266 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0B6EAC22455D66006E7266 /* UIHelper.swift */; };
 		EE0B6EB0224564BE006E7266 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0B6EAF224564BE006E7266 /* PlaceView.swift */; };
 		EE0B6EB2224571A7006E7266 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0B6EB1224571A7006E7266 /* Main.storyboard */; };
+		EE4E86A42252CEFE00EEDD69 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A32252CEFE00EEDD69 /* SessionView.swift */; };
+		EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */; };
+		EE4E86A82252D98400EEDD69 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A72252D98400EEDD69 /* QuestionView.swift */; };
 		EEF923DF22459B0400D05676 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923DE22459B0400D05676 /* Conference.swift */; };
 		EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E02245A66500D05676 /* RoundedTextView.swift */; };
 		EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E12245A66500D05676 /* AsyncImageView.swift */; };
@@ -59,6 +62,9 @@
 		EE0B6EAC22455D66006E7266 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE0B6EAF224564BE006E7266 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		EE0B6EB1224571A7006E7266 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EE4E86A32252CEFE00EEDD69 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		EE4E86A72252D98400EEDD69 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		EEF923DE22459B0400D05676 /* Conference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		EEF923E02245A66500D05676 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		EEF923E12245A66500D05676 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -129,7 +135,6 @@
 				EE0B6EAB22455D54006E7266 /* Helpers */,
 				EE0B6EA8224551A2006E7266 /* Controllers */,
 				EE0B6E9622455196006E7266 /* AppDelegate.swift */,
-				EE0B6E9822455196006E7266 /* ViewController.swift */,
 				EE0B6E9D22455197006E7266 /* Assets.xcassets */,
 				EE0B6E9F22455197006E7266 /* LaunchScreen.storyboard */,
 				EE0B6EA222455197006E7266 /* Info.plist */,
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0B6EA9224551B8006E7266 /* PlaceViewController.swift */,
+				EE0B6E9822455196006E7266 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,14 +166,25 @@
 		EE0B6EAE224564AE006E7266 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE4E86A22252CA4500EEDD69 /* Custom Views */,
 				EEF923FC2245C19900D05676 /* TableView */,
 				EEF923E82245A66800D05676 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE4E86A22252CA4500EEDD69 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
 				EE0B6EAF224564BE006E7266 /* PlaceView.swift */,
 				EEF923F82245BB8000D05676 /* ContentView.swift */,
 				EEF9240B22464E1400D05676 /* RoomView.swift */,
 				EEF9240D22464EC900D05676 /* SpeakerView.swift */,
+				EE4E86A32252CEFE00EEDD69 /* SessionView.swift */,
+				EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */,
+				EE4E86A72252D98400EEDD69 /* QuestionView.swift */,
 			);
-			path = Views;
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		EEF923DD22459AF600D05676 /* Models */ = {
@@ -328,6 +345,7 @@
 				EEF9241C22465F6800D05676 /* Talk.swift in Sources */,
 				EEF92404224638C000D05676 /* Place.swift in Sources */,
 				EEF923F92245BB8000D05676 /* ContentView.swift in Sources */,
+				EE4E86A82252D98400EEDD69 /* QuestionView.swift in Sources */,
 				EEF923F22245A7C000D05676 /* UIImage+Resize.swift in Sources */,
 				EEF923E62245A66500D05676 /* RoundedButton.swift in Sources */,
 				EEF923EC2245A6AA00D05676 /* ImageCache.swift in Sources */,
@@ -340,11 +358,13 @@
 				EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */,
 				EEF923FB2245BC5400D05676 /* CustomTableView.swift in Sources */,
 				EE0B6E9722455196006E7266 /* AppDelegate.swift in Sources */,
+				EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */,
 				EEF9240C22464E1400D05676 /* RoomView.swift in Sources */,
 				EEF9240E22464EC900D05676 /* SpeakerView.swift in Sources */,
 				EEF9241622465E4A00D05676 /* Track.swift in Sources */,
 				EE0B6EAD22455D66006E7266 /* UIHelper.swift in Sources */,
 				EEF923EB2245A6AA00D05676 /* ImagePersitenceHelper.swift in Sources */,
+				EE4E86A42252CEFE00EEDD69 /* SessionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

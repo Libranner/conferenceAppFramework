@@ -25,9 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     dict["ddd"] = data
     dict["222"] = data2
     
-    let tableVC = CustomTableViewController(style: .plain, data: dict)
+    //let vc = CustomTableViewController(style: .plain, data: dict)
+    let vc = PlaceViewController()
     
-    let viewController = UINavigationController(rootViewController: tableVC)
+    let viewController = UINavigationController(rootViewController: vc)
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = viewController
     window?.makeKeyAndVisible()
