@@ -14,12 +14,12 @@ class Activity {
   var startDate: Date
   var endDate: Date
   var canReview: Bool
-  var speaker: Speaker
-  var room: Room
-  var participants: [Participant]
+  var speaker: Speaker?
+  var room: Room?
+  var participants: [Participant]?
   
   init(name: String, details: String, startDate: Date, endDate: Date,
-       speaker: Speaker, room: Room, participants: [Participant], canReview: Bool) {
+       speaker: Speaker?, room: Room?, participants: [Participant]?, canReview: Bool) {
     self.name = name
     self.details = details
     self.startDate = startDate

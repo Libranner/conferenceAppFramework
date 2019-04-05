@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDvargate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let data = [TableViewData(title: "asdasdasdasd", subtitle: "2323232323", imagePath: url, object: venue)]
     let data2 = [TableViewData(title: "niniknkin", subtitle: "2323232323", imagePath: url, object: venue)]
+
     dict["ddd"] = data
     dict["222"] = data2
     
     //let vc = CustomTableViewController(style: .plain, data: dict)
-    let vc = PlaceViewController()
-    
-    let viewController = UINavigationController(rootViewController: vc)
+    //let vc = PlaceViewController()
+    let viewController = UINavigationController(rootViewController: ConferenceViewController())
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = viewController
     window?.makeKeyAndVisible()

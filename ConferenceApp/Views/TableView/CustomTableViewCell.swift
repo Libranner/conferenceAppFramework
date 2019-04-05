@@ -19,7 +19,7 @@ class CustomTableViewCell: UITableViewCell {
   
   fileprivate lazy var titleLabel: UILabel = {
     let label = UIHelper.multiLineLabel()
-    label.font = UIFont.boldSystemFont(ofSize: 15)
+    label.font = UIFont.boldSystemFont(ofSize: 20)
     label.textColor = .white
     label.minimumScaleFactor = 0.7
     return label
@@ -27,7 +27,7 @@ class CustomTableViewCell: UITableViewCell {
   
   fileprivate lazy var subtitleLabel: UILabel = {
     let label = UIHelper.singleLineLabel()
-    label.font = UIFont.boldSystemFont(ofSize: 12)
+    label.font = UIFont.boldSystemFont(ofSize: 14)
     label.textColor = .white
     return label
   }()
@@ -76,8 +76,7 @@ class CustomTableViewCell: UITableViewCell {
       
       dataStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
       dataStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.95),
-      dataStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-      
+      dataStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
       ])
   }
   

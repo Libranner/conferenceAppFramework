@@ -18,7 +18,7 @@ class QuestionView: UIView {
   }()
   
   fileprivate lazy var askButton: RoundedButton = {
-    let button = UIHelper.simpleButton()
+    let button = UIHelper.roundedButton()
     //button.setBackgroundImage(UIImage(named: "ask"), for: .normal)
     button.setTitle("Preguntar", for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false

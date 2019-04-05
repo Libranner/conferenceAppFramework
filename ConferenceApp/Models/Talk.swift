@@ -11,8 +11,8 @@ import UIKit
 class Talk: Activity {
   var canAsk: Bool = false
   
-  convenience init(name: String, details: String, startDate: Date, endDate: Date, speaker: Speaker,
-                   room: Room, participants: [Participant], canReview: Bool, canAsk: Bool) {
+  convenience init(name: String, details: String, startDate: Date, endDate: Date, speaker: Speaker?,
+                   room: Room?, participants: [Participant]?, canReview: Bool, canAsk: Bool) {
     
     self.init(name: name, details: details, startDate: startDate, endDate: endDate,
               speaker: speaker, room: room, participants: participants, canReview: canReview)

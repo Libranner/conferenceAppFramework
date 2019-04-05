@@ -40,25 +40,25 @@ class ActivityView: UIView {
   }()
   
   fileprivate lazy var navigationButton: RoundedButton = {
-    let button = UIHelper.simpleButton()
+    let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "navigation"), for: .normal)
     return button
   }()
   
   fileprivate lazy var speakerButton: RoundedButton = {
-    let button = UIHelper.simpleButton()
+    let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "speaker"), for: .normal)
     return button
   }()
   
   fileprivate lazy var reviewButton: RoundedButton = {
-    let button = UIHelper.simpleButton()
+    let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "review"), for: .normal)
     return button
   }()
   
   fileprivate lazy var askButton: RoundedButton = {
-    let button = UIHelper.simpleButton()
+    let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "ask"), for: .normal)
     return button
   }()

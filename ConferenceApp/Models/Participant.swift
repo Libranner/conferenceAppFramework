@@ -10,5 +10,4 @@ import Foundation
 
 struct Participant {
   var name: String
-  var canReview: Bool
 }

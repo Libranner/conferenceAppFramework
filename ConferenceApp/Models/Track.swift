@@ -10,5 +10,5 @@ import Foundation
 
 struct Track {
   var name: String
-  var sessions: [Session]
+  var sessions: [Session]?
 }

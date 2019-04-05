@@ -1,32 +1,31 @@
 //
-//  PlaceView.swift
+//  ConferenceView.swift
 //  ConferenceApp
 //
-//  Created by Libranner Leonel Santos Espinal on 22/03/2019.
+//  Created by Libranner Leonel Santos Espinal on 05/04/2019.
 //  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
 //
 
 import UIKit
 
-class PlaceView: UIView {
+protocol ConferenceViewDelegate {
+  func showTracksPressed()
+}
+
+class ConferenceView:  UIView {
+  var delegate: ConferenceViewDelegate?
+  
   fileprivate lazy var photoImageView: AsyncImageView = {
     let photoImageView = AsyncImageView()
-    photoImageView.contentMode = .scaleAspectFit
+    photoImageView.contentMode = .scaleToFill
     photoImageView.translatesAutoresizingMaskIntoConstraints = false
     return photoImageView
   }()
   
   fileprivate lazy var nameLabel: UILabel = {
-    let label = UIHelper.singleLineLabel()
+    let label = UILabel()
     label.textColor = .white
     label.minimumScaleFactor = 0.7
-    return label
-  }()
-  
-  fileprivate lazy var dateLabel: UILabel = {
-    let label = UIHelper.singleLineLabel()
-    label.font = UIFont.boldSystemFont(ofSize: 14)
-    label.textColor = CustomColor.defaultColor
     return label
   }()
   
@@ -37,20 +36,20 @@ class PlaceView: UIView {
     return label
   }()
   
-  fileprivate lazy var navigationButton: RoundedButton = {
-    let button = UIHelper.roundedButton()
-    button.setBackgroundImage(UIImage(named: "navigation"), for: .normal)
-    return button
-  }()
-  
   fileprivate lazy var gradientView: GradientView = {
     let view = GradientView()
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
   
+  lazy var tracksButton: UIButton = {
+    let button = UIHelper.normalButton()
+    button.setTitle(" Ver Tracks ", for: .normal)
+    return button
+  }()
+  
   private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, detailLabel])
+    let stackView = UIStackView(arrangedSubviews: [nameLabel, detailLabel])
     stackView.axis = .vertical
     stackView.distribution = .equalSpacing
     stackView.spacing = 15
@@ -62,7 +61,6 @@ class PlaceView: UIView {
     let scrollView = UIScrollView()
     scrollView.addSubview(gradientView)
     scrollView.addSubview(photoImageView)
-    scrollView.addSubview(navigationButton)
     scrollView.addSubview(mainStackView)
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     return scrollView
@@ -70,7 +68,8 @@ class PlaceView: UIView {
   
   private func setupLayout() {
     self.addSubview(mainScrollView)
-
+    self.addSubview(tracksButton)
+    
     NSLayoutConstraint.activate([
       mainScrollView.topAnchor.constraint(equalTo: topAnchor),
       mainScrollView.rightAnchor.constraint(equalTo: rightAnchor),
@@ -87,37 +86,25 @@ class PlaceView: UIView {
       gradientView.bottomAnchor.constraint(equalTo: photoImageView.bottomAnchor),
       gradientView.leftAnchor.constraint(equalTo: photoImageView.leftAnchor),
       
-      navigationButton.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: -50),
-      navigationButton.rightAnchor.constraint(equalTo: photoImageView.rightAnchor, constant: -30),
-      navigationButton.widthAnchor.constraint(equalToConstant: 50),
-      navigationButton.heightAnchor.constraint(equalTo: navigationButton.widthAnchor),
+      tracksButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+      tracksButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -5),
       
       mainStackView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -30),
       mainStackView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
       mainStackView.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.95),
-      mainStackView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: -20)
+      mainStackView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: 20)
       ])
   }
   
-  var placeName: String? {
+  var name: String? {
     didSet {
-      nameLabel.text = placeName
+      nameLabel.text = name
     }
   }
   
-  var placeDetail: String? {
+  var detail: String? {
     didSet {
-      detailLabel.text = placeDetail
-    }
-  }
-  
-  var formattedDate: String? {
-    didSet {
-      guard let formattedDate = formattedDate else {
-        dateLabel.isHidden = true
-        return
-      }
-      dateLabel.text = formattedDate
+      detailLabel.text = detail
     }
   }
   
@@ -132,7 +119,8 @@ class PlaceView: UIView {
     setupLayout()
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+  required convenience init?(coder aDecoder: NSCoder) {
+    self.init()
   }
 }
+

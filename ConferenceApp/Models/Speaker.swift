@@ -11,5 +11,5 @@ import Foundation
 struct Speaker {
   var name: String
   var bio: String
-  var picture: URL
+  var picture: URL?
 }

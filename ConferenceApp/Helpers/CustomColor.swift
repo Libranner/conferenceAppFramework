@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct CustomColor {
-    static let defaultColor = UIColor(named: "DefaultColor")
+    //static let defaultColor = UIColor(named: "DefaultColor")
+  static let defaultColor: UIColor = .blue
 }
 

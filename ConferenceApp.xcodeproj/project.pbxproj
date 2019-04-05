@@ -15,6 +15,10 @@
 		EE0B6EAD22455D66006E7266 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0B6EAC22455D66006E7266 /* UIHelper.swift */; };
 		EE0B6EB0224564BE006E7266 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0B6EAF224564BE006E7266 /* PlaceView.swift */; };
 		EE0B6EB2224571A7006E7266 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0B6EB1224571A7006E7266 /* Main.storyboard */; };
+		EE38EBEB2257D42700529DD5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38EBEA2257D42700529DD5 /* ContentViewController.swift */; };
+		EE38EBED2257D4DA00529DD5 /* ConferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38EBEC2257D4DA00529DD5 /* ConferenceView.swift */; };
+		EE38EBF02257D87900529DD5 /* ConferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38EBEF2257D87900529DD5 /* ConferenceViewController.swift */; };
+		EE38EBF22257F45100529DD5 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38EBF12257F45100529DD5 /* DateHelper.swift */; };
 		EE4E86A42252CEFE00EEDD69 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A32252CEFE00EEDD69 /* SessionView.swift */; };
 		EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */; };
 		EE4E86A82252D98400EEDD69 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A72252D98400EEDD69 /* QuestionView.swift */; };
@@ -62,6 +66,10 @@
 		EE0B6EAC22455D66006E7266 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE0B6EAF224564BE006E7266 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		EE0B6EB1224571A7006E7266 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EE38EBEA2257D42700529DD5 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		EE38EBEC2257D4DA00529DD5 /* ConferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceView.swift; sourceTree = "<group>"; };
+		EE38EBEF2257D87900529DD5 /* ConferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceViewController.swift; sourceTree = "<group>"; };
+		EE38EBF12257F45100529DD5 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		EE4E86A32252CEFE00EEDD69 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		EE4E86A72252D98400EEDD69 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -146,8 +154,11 @@
 		EE0B6EA8224551A2006E7266 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE38EBEE2257D56F00529DD5 /* Renders */,
 				EE0B6EA9224551B8006E7266 /* PlaceViewController.swift */,
 				EE0B6E9822455196006E7266 /* ViewController.swift */,
+				EE38EBEA2257D42700529DD5 /* ContentViewController.swift */,
+				EE38EBEF2257D87900529DD5 /* ConferenceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +170,7 @@
 				EEF923EA2245A6A900D05676 /* ImageCache.swift */,
 				EEF923E92245A6A900D05676 /* ImagePersitenceHelper.swift */,
 				EE0B6EAC22455D66006E7266 /* UIHelper.swift */,
+				EE38EBF12257F45100529DD5 /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -173,6 +185,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EE38EBEE2257D56F00529DD5 /* Renders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Renders;
+			sourceTree = "<group>";
+		};
 		EE4E86A22252CA4500EEDD69 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +202,7 @@
 				EE4E86A32252CEFE00EEDD69 /* SessionView.swift */,
 				EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */,
 				EE4E86A72252D98400EEDD69 /* QuestionView.swift */,
+				EE38EBEC2257D4DA00529DD5 /* ConferenceView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -326,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE38EBEB2257D42700529DD5 /* ContentViewController.swift in Sources */,
+				EE38EBF02257D87900529DD5 /* ConferenceViewController.swift in Sources */,
 				EEF9241422465D7E00D05676 /* SocialFeed.swift in Sources */,
 				EE0B6EAA224551B8006E7266 /* PlaceViewController.swift in Sources */,
 				EE0B6E9922455196006E7266 /* ViewController.swift in Sources */,
@@ -335,6 +357,7 @@
 				EEF9240A22464B1800D05676 /* CustomColor.swift in Sources */,
 				EEF923E72245A66500D05676 /* GradientView.swift in Sources */,
 				EEF924022246238400D05676 /* CustomTableViewCell.swift in Sources */,
+				EE38EBF22257F45100529DD5 /* DateHelper.swift in Sources */,
 				EEF924002245C20400D05676 /* TableViewData.swift in Sources */,
 				EEF9241A22465EAE00D05676 /* Activity.swift in Sources */,
 				EEF923F32245A7C000D05676 /* UIVIewController+Keyboard.swift in Sources */,
@@ -358,6 +381,7 @@
 				EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */,
 				EEF923FB2245BC5400D05676 /* CustomTableView.swift in Sources */,
 				EE0B6E9722455196006E7266 /* AppDelegate.swift in Sources */,
+				EE38EBED2257D4DA00529DD5 /* ConferenceView.swift in Sources */,
 				EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */,
 				EEF9240C22464E1400D05676 /* RoomView.swift in Sources */,
 				EEF9240E22464EC900D05676 /* SpeakerView.swift in Sources */,

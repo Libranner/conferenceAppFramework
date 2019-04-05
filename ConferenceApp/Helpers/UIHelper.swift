@@ -23,8 +23,16 @@ struct UIHelper {
     return label
   }
   
-  static func simpleButton() -> RoundedButton{
+  static func roundedButton() -> RoundedButton{
     let button = RoundedButton()
+    button.setTitleColor(.white, for: .normal)
+    button.backgroundColor = CustomColor.defaultColor
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }
+  
+  static func normalButton() -> UIButton{
+    let button = UIButton()
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = CustomColor.defaultColor
     button.translatesAutoresizingMaskIntoConstraints = false

@@ -89,7 +89,7 @@ class SpeakerView: UIView {
     didSet {
       photoImageView.fillWithURL(speakerImageUrl, placeholder: "logo_usj")
       photoImageView.layer.borderWidth = 2
-      photoImageView.layer.borderColor = CustomColor.defaultColor?.cgColor
+      photoImageView.layer.borderColor = CustomColor.defaultColor.cgColor
       photoImageView.clipsToBounds = true
       photoImageView.layer.cornerRadius = imageWidth / 2
     }

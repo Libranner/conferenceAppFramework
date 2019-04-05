@@ -13,7 +13,9 @@ struct Session {
   var details: String
   var startDate: Date
   var endDate: Date
-  var picture: URL
-  var talks: [Talk]
-  var workshops: [Workshop]
+  var picture: URL?
+  var talks: [Talk]?
+  var workshops: [Workshop]?
+  
+  
 }

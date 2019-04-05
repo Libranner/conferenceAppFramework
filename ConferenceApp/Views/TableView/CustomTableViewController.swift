@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol CustomTableViewControllerDelegate {
+  func cellSelected(object: AnyObject?)
+}
+
 class CustomTableViewController: UITableViewController {
   let cellIdentifier = "CellIdentifier"
   var data: [String: [TableViewData]]!
+  var customTableViewControllerDelegate: CustomTableViewControllerDelegate?
   
   convenience init(style: UITableView.Style, data: [String: [TableViewData]] ) {
     self.init(style: style)
@@ -58,11 +63,13 @@ class CustomTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedItem = itemForIndexPath(indexPath)
+    let item = itemForIndexPath(indexPath)
+    customTableViewControllerDelegate?.cellSelected(object: item.object)
+    /*let selectedItem = itemForIndexPath(indexPath)
     let venue = PlaceViewController()
     venue.item = selectedItem.object as? Venue
     
-    navigationController?.pushViewController(venue, animated: true)
+    navigationController?.pushViewController(venue, animated: true)*/
   }
 
   
