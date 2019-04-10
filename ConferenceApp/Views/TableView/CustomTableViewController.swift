@@ -16,10 +16,12 @@ class CustomTableViewController: UITableViewController {
   let cellIdentifier = "CellIdentifier"
   var data: [String: [TableViewData]]!
   var customTableViewControllerDelegate: CustomTableViewControllerDelegate?
+  var onSelected: ((_ object: AnyObject?)->())?
   
-  convenience init(style: UITableView.Style, data: [String: [TableViewData]] ) {
+  convenience init(style: UITableView.Style, data: [String: [TableViewData]], onSelected:((_ object: AnyObject?)->())?) {
     self.init(style: style)
     self.data = data
+    self.onSelected = onSelected
   }
   
   override func viewDidLoad() {
@@ -65,10 +67,13 @@ class CustomTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let item = itemForIndexPath(indexPath)
     customTableViewControllerDelegate?.cellSelected(object: item.object)
+    
+    onSelected?(item.object)
+    
     /*let selectedItem = itemForIndexPath(indexPath)
     let venue = PlaceViewController()
     venue.item = selectedItem.object as? Venue
-    
+
     navigationController?.pushViewController(venue, animated: true)*/
   }
 

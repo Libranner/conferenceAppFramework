@@ -11,7 +11,7 @@ import Foundation
 struct DateHelper {
   static func dateToString(_ date: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat =  "MM-dd-yyyy HH:mm"
+    dateFormatter.dateFormat =  "MM/dd/yyyy HH:mm"
     
     return dateFormatter.string(from: date)
   }

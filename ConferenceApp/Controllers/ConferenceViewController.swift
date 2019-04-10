@@ -46,7 +46,7 @@ class ConferenceViewController: UIViewController, CustomTableViewControllerDeleg
       data.append(TableViewData(title: track.name, subtitle:"", imagePath: nil, object: track as AnyObject))
     })
     
-    let vc = CustomTableViewController(style: .plain, data: ["": data])
+    let vc = CustomTableViewController(style: .plain, data: ["": data], onSelected: nil)
     vc.customTableViewControllerDelegate = self
     navigationController?.pushViewController(vc, animated: true)
   }
@@ -63,8 +63,25 @@ class ConferenceViewController: UIViewController, CustomTableViewControllerDeleg
       data.append(TableViewData(title: session.name, subtitle:formattedDate, imagePath: session.picture, object: session as AnyObject))
     })
     
-    let vc = CustomTableViewController(style: .plain, data: ["": data])
-    navigationController?.pushViewController(vc, animated: true)
+    let vc = CustomTableViewController(style: .plain, data: ["": data]) { [weak self] object in
+      var talks = [TableViewData]()
+      let session = object as! Session
+      session.talks?.forEach({ (talk) in
+        let formattedDate = "\(DateHelper.dateToString(talk.startDate)) - \(DateHelper.dateToString(talk.endDate))"
+        talks.append(TableViewData(title: talk.name, subtitle:formattedDate, imagePath: nil, object: talk as AnyObject))
+      })
+      
+      var workshops = [TableViewData]()
+      session.workshops?.forEach({ (workshop) in
+        let formattedDate = "\(DateHelper.dateToString(workshop.startDate)) - \(DateHelper.dateToString(workshop.endDate))"
+        workshops.append(TableViewData(title: workshop.name, subtitle:formattedDate, imagePath: nil, object: workshop as AnyObject))
+      })
+      
+      let talksVC = CustomTableViewController(style: .plain, data: ["Talks": talks, "Workshops": workshops], onSelected: nil)
+      self?.navigationController?.pushViewController(talksVC , animated: true)
+    }
+    
+    self.navigationController?.pushViewController(vc , animated: true)
   }
   
 }
