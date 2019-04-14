@@ -17,5 +17,7 @@ struct Session {
   var talks: [Talk]?
   var workshops: [Workshop]?
   
-  
+  var formattedDate: String {
+    return "\(DateHelper.dateToString(startDate)) - \(DateHelper.dateToString(endDate))"
+  }
 }

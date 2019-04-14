@@ -29,4 +29,8 @@ class Activity {
     self.participants = participants
     self.canReview = canReview
   }
+  
+  var formattedDate: String {
+    return "\(DateHelper.dateToString(startDate)) - \(DateHelper.dateToString(endDate))"
+  }
 }

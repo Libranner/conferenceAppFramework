@@ -22,6 +22,10 @@
 		EE4E86A42252CEFE00EEDD69 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A32252CEFE00EEDD69 /* SessionView.swift */; };
 		EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */; };
 		EE4E86A82252D98400EEDD69 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E86A72252D98400EEDD69 /* QuestionView.swift */; };
+		EEB2E8A82261688400584B62 /* SocialFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8A72261688400584B62 /* SocialFeedTableViewCell.swift */; };
+		EEB2E8AA2261C51F00584B62 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8A92261C51F00584B62 /* Loader.swift */; };
+		EEB2E8AC2261F06A00584B62 /* SocialFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */; };
+		EEB2E8AE2261F07400584B62 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AD2261F07400584B62 /* TracksViewController.swift */; };
 		EEF923DF22459B0400D05676 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923DE22459B0400D05676 /* Conference.swift */; };
 		EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E02245A66500D05676 /* RoundedTextView.swift */; };
 		EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E12245A66500D05676 /* AsyncImageView.swift */; };
@@ -52,7 +56,7 @@
 		EEF9241A22465EAE00D05676 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241922465EAE00D05676 /* Activity.swift */; };
 		EEF9241C22465F6800D05676 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241B22465F6800D05676 /* Talk.swift */; };
 		EEF9241E2246620900D05676 /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241D2246620900D05676 /* Workshop.swift */; };
-		EEF924202246667900D05676 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241F2246667900D05676 /* Loader.swift */; };
+		EEF924202246667900D05676 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241F2246667900D05676 /* Loaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,10 @@
 		EE4E86A32252CEFE00EEDD69 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		EE4E86A72252D98400EEDD69 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		EEB2E8A72261688400584B62 /* SocialFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedTableViewCell.swift; sourceTree = "<group>"; };
+		EEB2E8A92261C51F00584B62 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedViewController.swift; sourceTree = "<group>"; };
+		EEB2E8AD2261F07400584B62 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 		EEF923DE22459B0400D05676 /* Conference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		EEF923E02245A66500D05676 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		EEF923E12245A66500D05676 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -103,7 +111,7 @@
 		EEF9241922465EAE00D05676 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EEF9241B22465F6800D05676 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		EEF9241D2246620900D05676 /* Workshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workshop.swift; sourceTree = "<group>"; };
-		EEF9241F2246667900D05676 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		EEF9241F2246667900D05676 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,8 @@
 				EE0B6E9822455196006E7266 /* ViewController.swift */,
 				EE38EBEA2257D42700529DD5 /* ContentViewController.swift */,
 				EE38EBEF2257D87900529DD5 /* ConferenceViewController.swift */,
+				EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */,
+				EEB2E8AD2261F07400584B62 /* TracksViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,7 +232,8 @@
 				EEF9241922465EAE00D05676 /* Activity.swift */,
 				EEF9241B22465F6800D05676 /* Talk.swift */,
 				EEF9241D2246620900D05676 /* Workshop.swift */,
-				EEF9241F2246667900D05676 /* Loader.swift */,
+				EEF9241F2246667900D05676 /* Loaders.swift */,
+				EEB2E8A92261C51F00584B62 /* Loader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +282,7 @@
 				EEF923FD2245C1B300D05676 /* CustomTableViewController.swift */,
 				EEF923FF2245C20400D05676 /* TableViewData.swift */,
 				EEF924012246238400D05676 /* CustomTableViewCell.swift */,
+				EEB2E8A72261688400584B62 /* SocialFeedTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -368,27 +380,31 @@
 				EEF9241C22465F6800D05676 /* Talk.swift in Sources */,
 				EEF92404224638C000D05676 /* Place.swift in Sources */,
 				EEF923F92245BB8000D05676 /* ContentView.swift in Sources */,
+				EEB2E8A82261688400584B62 /* SocialFeedTableViewCell.swift in Sources */,
 				EE4E86A82252D98400EEDD69 /* QuestionView.swift in Sources */,
 				EEF923F22245A7C000D05676 /* UIImage+Resize.swift in Sources */,
 				EEF923E62245A66500D05676 /* RoundedButton.swift in Sources */,
 				EEF923EC2245A6AA00D05676 /* ImageCache.swift in Sources */,
 				EEF923F62245B2B000D05676 /* UIButton+Animations.swift in Sources */,
 				EEF9241222465D2100D05676 /* Speaker.swift in Sources */,
+				EEB2E8AC2261F06A00584B62 /* SocialFeedViewController.swift in Sources */,
 				EEF924062246390500D05676 /* Venue.swift in Sources */,
 				EEF923FE2245C1B300D05676 /* CustomTableViewController.swift in Sources */,
-				EEF924202246667900D05676 /* Loader.swift in Sources */,
+				EEF924202246667900D05676 /* Loaders.swift in Sources */,
 				EEF923DF22459B0400D05676 /* Conference.swift in Sources */,
 				EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */,
 				EEF923FB2245BC5400D05676 /* CustomTableView.swift in Sources */,
 				EE0B6E9722455196006E7266 /* AppDelegate.swift in Sources */,
 				EE38EBED2257D4DA00529DD5 /* ConferenceView.swift in Sources */,
 				EE4E86A62252CFCB00EEDD69 /* ActivityView.swift in Sources */,
+				EEB2E8AE2261F07400584B62 /* TracksViewController.swift in Sources */,
 				EEF9240C22464E1400D05676 /* RoomView.swift in Sources */,
 				EEF9240E22464EC900D05676 /* SpeakerView.swift in Sources */,
 				EEF9241622465E4A00D05676 /* Track.swift in Sources */,
 				EE0B6EAD22455D66006E7266 /* UIHelper.swift in Sources */,
 				EEF923EB2245A6AA00D05676 /* ImagePersitenceHelper.swift in Sources */,
 				EE4E86A42252CEFE00EEDD69 /* SessionView.swift in Sources */,
+				EEB2E8AA2261C51F00584B62 /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,23 +14,32 @@ class AppDvargate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    var dict = [String: [TableViewData]]()
     
-    let url = URL(string: "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg")
+    let conferenceViewController = ConferenceViewController()
+    conferenceViewController.tabBarItem.image = UIImage(named: "conference")
+    conferenceViewController.title = "Conference"
     
-    let venue = Venue(name: "Sample", direction: "asdasdsadasdas asdasd", latitude: 1, longitude: 2, photoURL: url)
+    var data = [TableViewData]()
     
-    let data = [TableViewData(title: "asdasdasdasd", subtitle: "2323232323", imagePath: url, object: venue)]
-    let data2 = [TableViewData(title: "niniknkin", subtitle: "2323232323", imagePath: url, object: venue)]
-
-    dict["ddd"] = data
-    dict["222"] = data2
+    let conference = Loader.shared.conferenceData()
+    conference.tracks?.forEach({ (track) in
+      data.append(TableViewData(title: track.name, subtitle:"", imagePath: nil, object: track as AnyObject))
+    })
     
-    //let vc = CustomTableViewController(style: .plain, data: dict)
-    //let vc = PlaceViewController()
-    let viewController = UINavigationController(rootViewController: ConferenceViewController())
+    let vc = TracksViewController(style: .plain, data: ["": data], onSelected: nil)
+    let tracksViewController = UINavigationController(rootViewController: vc)
+    tracksViewController.tabBarItem.image = UIImage(named: "tracks")
+    tracksViewController.title = "Tracks"
+    
+    let socialFeedViewController = UINavigationController(rootViewController: SocialFeedViewController())
+    socialFeedViewController.tabBarItem.image = UIImage(named: "social_feed")
+    socialFeedViewController.title = "Social Feed"
+    
+    let tabVC = UITabBarController()
+    tabVC.viewControllers = [conferenceViewController, tracksViewController, socialFeedViewController]
+    
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = viewController
+    window?.rootViewController = tabVC
     window?.makeKeyAndVisible()
     return true
   }
