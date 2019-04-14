@@ -14,12 +14,14 @@ class QuestionView: UIView {
     let textfield = UITextField(frame: .zero)
     textfield.borderStyle = .roundedRect
     textfield.translatesAutoresizingMaskIntoConstraints = false
+    textfield.layer.borderColor = CustomColor.blueColor?.cgColor
+    textfield.layer.borderWidth = 1
+    textfield.layer.masksToBounds = true
     return textfield
   }()
   
   fileprivate lazy var askButton: RoundedButton = {
     let button = UIHelper.roundedButton()
-    //button.setBackgroundImage(UIImage(named: "ask"), for: .normal)
     button.setTitle("Preguntar", for: .normal)
     button.backgroundColor = CustomColor.blueColor
     button.translatesAutoresizingMaskIntoConstraints = false

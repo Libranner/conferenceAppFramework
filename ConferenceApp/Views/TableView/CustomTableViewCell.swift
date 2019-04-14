@@ -12,7 +12,8 @@ class CustomTableViewCell: UITableViewCell {
   
   fileprivate lazy var photoImageView: AsyncImageView = {
     let photoImageView = AsyncImageView()
-    photoImageView.contentMode = .scaleToFill
+    photoImageView.contentMode = .scaleAspectFill
+    photoImageView.clipsToBounds = true
     photoImageView.translatesAutoresizingMaskIntoConstraints = false
     return photoImageView
   }()

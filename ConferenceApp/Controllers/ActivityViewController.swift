@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol ActivityViewControllerDelegate {
   func showSpeaker(activityView: ActivityView, speaker: Speaker)
@@ -16,7 +17,6 @@ protocol ActivityViewControllerDelegate {
 }
 
 class ActivityViewController: UIViewController {
-  var delegate: ActivityViewControllerDelegate?
   var activityView: ActivityView!
   
   var activity: Activity? {
@@ -55,16 +55,24 @@ class ActivityViewController: UIViewController {
   
   @objc fileprivate func navigationButtonTapped() {
     if let room = activity?.room {
-      delegate?.showNavigation(activityView: activityView,
-                               latitude: room.latitude,
-                               longitude: room.longitude)
+      let regionDistance:CLLocationDistance = 10000
+      let coordinates = CLLocationCoordinate2DMake(CLLocationDegrees(room.latitude), CLLocationDegrees(room.longitude))
+      let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+      let options = [
+        MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+      ]
+      
+      let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+      
+      let mapItem = MKMapItem(placemark: placemark)
+      mapItem.name = activity?.name
+      mapItem.openInMaps(launchOptions: options)
     }
   }
   
   @objc fileprivate func speakerButtonTapped() {
     if let speaker = activity?.speaker {
-      delegate?.showSpeaker(activityView: activityView, speaker: speaker)
-      
       let speakerView = SpeakerView()
       speakerView.speakerBio = speaker.bio
       speakerView.speakerName = speaker.name
@@ -75,19 +83,11 @@ class ActivityViewController: UIViewController {
   }
   
   @objc fileprivate func questionButtonTapped() {
-    if let activity = activity {
-      delegate?.showQuestionForm(activityView: activityView, activity: activity)
-    }
-    
     let questionView = QuestionView()
     presentView(questionView)
   }
   
   @objc fileprivate func reviewButtonTapped() {
-    if let activity = activity {
-      delegate?.showReviewForm(activityView: activityView, activity: activity)
-    }
-    
     let reviewView = ReviewView()
     presentView(reviewView)
   }
@@ -96,13 +96,13 @@ class ActivityViewController: UIViewController {
     customView.translatesAutoresizingMaskIntoConstraints = false
     
     let vc = ContentViewController()
-    vc.view.addSubview(customView)
+    vc.containerView.addSubview(customView)
     
     NSLayoutConstraint.activate([
-      customView.topAnchor.constraint(equalTo: vc.view.safeAreaLayoutGuide.topAnchor),
-      customView.leadingAnchor.constraint(equalTo: vc.view.safeAreaLayoutGuide.leadingAnchor),
-      customView.trailingAnchor.constraint(equalTo: vc.view.safeAreaLayoutGuide.trailingAnchor),
-      customView.bottomAnchor.constraint(equalTo: vc.view.safeAreaLayoutGuide.bottomAnchor)
+      customView.topAnchor.constraint(equalTo: vc.containerView.safeAreaLayoutGuide.topAnchor),
+      customView.leadingAnchor.constraint(equalTo: vc.containerView.safeAreaLayoutGuide.leadingAnchor),
+      customView.trailingAnchor.constraint(equalTo: vc.containerView.safeAreaLayoutGuide.trailingAnchor),
+      customView.bottomAnchor.constraint(equalTo: vc.containerView.safeAreaLayoutGuide.bottomAnchor)
       ])
     
     self.present(vc, animated: true)

@@ -31,7 +31,6 @@ class ReviewView: UIView {
       stackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
       stackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
       ])
-  
   }
   
   fileprivate func setupButtonWithTitle(_ title: String) -> UIButton {
