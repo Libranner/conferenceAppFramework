@@ -91,6 +91,7 @@ class SpeakerView: UIView {
       photoImageView.layer.borderWidth = 2
       photoImageView.layer.borderColor = CustomColor.defaultColor.cgColor
       photoImageView.clipsToBounds = true
+      photoImageView.contentMode = .scaleAspectFill
       photoImageView.layer.cornerRadius = imageWidth / 2
     }
   }

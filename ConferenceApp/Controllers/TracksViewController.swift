@@ -38,7 +38,22 @@ class TracksViewController: CustomTableViewController {
         workshops.append(TableViewData(title: workshop.name, subtitle:workshop.formattedDate, imagePath: nil, object: workshop as AnyObject))
       })
       
-      let talksVC = CustomTableViewController(style: .plain, data: ["Talks": talks, "Workshops": workshops], onSelected: nil)
+      var activities = [String: [TableViewData]]()
+      if talks.count > 0 {
+        activities["Talks"] = talks
+      }
+      
+      if workshops.count > 0 {
+        activities["Workshops"] = workshops
+      }
+      
+      let talksVC = CustomTableViewController(style: .plain, data: activities) { [weak self] activity in
+        let activityVC = ActivityViewController()
+        activityVC.activity = activity as? Activity
+        self?.navigationController?.pushViewController(activityVC, animated: true)
+      }
+        
+      
       self?.navigationController?.pushViewController(talksVC , animated: true)
     }
     

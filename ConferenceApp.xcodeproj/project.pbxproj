@@ -26,6 +26,8 @@
 		EEB2E8AA2261C51F00584B62 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8A92261C51F00584B62 /* Loader.swift */; };
 		EEB2E8AC2261F06A00584B62 /* SocialFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */; };
 		EEB2E8AE2261F07400584B62 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AD2261F07400584B62 /* TracksViewController.swift */; };
+		EEB2E8B02263A91E00584B62 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AF2263A91E00584B62 /* ActivityViewController.swift */; };
+		EEB2E8B22263C1AC00584B62 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8B12263C1AC00584B62 /* ReviewView.swift */; };
 		EEF923DF22459B0400D05676 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923DE22459B0400D05676 /* Conference.swift */; };
 		EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E02245A66500D05676 /* RoundedTextView.swift */; };
 		EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E12245A66500D05676 /* AsyncImageView.swift */; };
@@ -81,6 +83,8 @@
 		EEB2E8A92261C51F00584B62 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedViewController.swift; sourceTree = "<group>"; };
 		EEB2E8AD2261F07400584B62 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		EEB2E8AF2263A91E00584B62 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		EEB2E8B12263C1AC00584B62 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		EEF923DE22459B0400D05676 /* Conference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		EEF923E02245A66500D05676 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		EEF923E12245A66500D05676 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				EE38EBEF2257D87900529DD5 /* ConferenceViewController.swift */,
 				EEB2E8AB2261F06A00584B62 /* SocialFeedViewController.swift */,
 				EEB2E8AD2261F07400584B62 /* TracksViewController.swift */,
+				EEB2E8AF2263A91E00584B62 /* ActivityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				EE4E86A52252CFCB00EEDD69 /* ActivityView.swift */,
 				EE4E86A72252D98400EEDD69 /* QuestionView.swift */,
 				EE38EBEC2257D4DA00529DD5 /* ConferenceView.swift */,
+				EEB2E8B12263C1AC00584B62 /* ReviewView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				EEF923F72245B2B000D05676 /* UIView+Animation.swift in Sources */,
 				EEF9241822465E6700D05676 /* Session.swift in Sources */,
 				EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */,
+				EEB2E8B02263A91E00584B62 /* ActivityViewController.swift in Sources */,
 				EEF9241C22465F6800D05676 /* Talk.swift in Sources */,
 				EEF92404224638C000D05676 /* Place.swift in Sources */,
 				EEF923F92245BB8000D05676 /* ContentView.swift in Sources */,
@@ -391,6 +398,7 @@
 				EEF924062246390500D05676 /* Venue.swift in Sources */,
 				EEF923FE2245C1B300D05676 /* CustomTableViewController.swift in Sources */,
 				EEF924202246667900D05676 /* Loaders.swift in Sources */,
+				EEB2E8B22263C1AC00584B62 /* ReviewView.swift in Sources */,
 				EEF923DF22459B0400D05676 /* Conference.swift in Sources */,
 				EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */,
 				EEF923FB2245BC5400D05676 /* CustomTableView.swift in Sources */,

@@ -17,7 +17,7 @@ class ConferenceView:  UIView {
   
   fileprivate lazy var photoImageView: AsyncImageView = {
     let photoImageView = AsyncImageView()
-    photoImageView.contentMode = .scaleToFill
+    photoImageView.contentMode = .scaleAspectFit
     photoImageView.translatesAutoresizingMaskIntoConstraints = false
     return photoImageView
   }()
@@ -42,12 +42,6 @@ class ConferenceView:  UIView {
     return view
   }()
   
-  lazy var tracksButton: UIButton = {
-    let button = UIHelper.normalButton()
-    button.setTitle(" Ver Tracks ", for: .normal)
-    return button
-  }()
-  
   private lazy var mainStackView: UIStackView = {
     let stackView = UIStackView(arrangedSubviews: [nameLabel, detailLabel])
     stackView.axis = .vertical
@@ -59,8 +53,8 @@ class ConferenceView:  UIView {
   
   fileprivate lazy var mainScrollView: UIScrollView = {
     let scrollView = UIScrollView()
-    scrollView.addSubview(gradientView)
     scrollView.addSubview(photoImageView)
+    scrollView.addSubview(gradientView)
     scrollView.addSubview(mainStackView)
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     return scrollView
@@ -68,7 +62,6 @@ class ConferenceView:  UIView {
   
   private func setupLayout() {
     self.addSubview(mainScrollView)
-    self.addSubview(tracksButton)
     
     NSLayoutConstraint.activate([
       mainScrollView.topAnchor.constraint(equalTo: topAnchor),
@@ -85,9 +78,6 @@ class ConferenceView:  UIView {
       gradientView.rightAnchor.constraint(equalTo: photoImageView.rightAnchor),
       gradientView.bottomAnchor.constraint(equalTo: photoImageView.bottomAnchor),
       gradientView.leftAnchor.constraint(equalTo: photoImageView.leftAnchor),
-      
-      tracksButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
-      tracksButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -5),
       
       mainStackView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -30),
       mainStackView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),

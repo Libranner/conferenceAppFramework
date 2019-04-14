@@ -13,7 +13,7 @@ class ActivityView: UIView {
   
   fileprivate lazy var photoImageView: AsyncImageView = {
     let photoImageView = AsyncImageView()
-    photoImageView.contentMode = .scaleAspectFit
+    photoImageView.contentMode = .scaleAspectFill
     photoImageView.translatesAutoresizingMaskIntoConstraints = false
     return photoImageView
   }()
@@ -21,6 +21,8 @@ class ActivityView: UIView {
   fileprivate lazy var nameLabel: UILabel = {
     let label = UIHelper.singleLineLabel()
     label.textColor = .white
+    label.font = UIFont.boldSystemFont(ofSize: 22)
+    label.numberOfLines = 1
     label.minimumScaleFactor = 0.7
     return label
   }()
@@ -39,27 +41,31 @@ class ActivityView: UIView {
     return label
   }()
   
-  fileprivate lazy var navigationButton: RoundedButton = {
+  lazy var navigationButton: RoundedButton = {
     let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "navigation"), for: .normal)
+    button.backgroundColor = .white
     return button
   }()
   
-  fileprivate lazy var speakerButton: RoundedButton = {
+  lazy var speakerButton: RoundedButton = {
     let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "speaker"), for: .normal)
+    button.backgroundColor = .white
     return button
   }()
   
-  fileprivate lazy var reviewButton: RoundedButton = {
+  lazy var reviewButton: RoundedButton = {
     let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "review"), for: .normal)
+    button.backgroundColor = .white
     return button
   }()
   
-  fileprivate lazy var askButton: RoundedButton = {
+  lazy var askButton: RoundedButton = {
     let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "ask"), for: .normal)
+    button.backgroundColor = .white
     return button
   }()
   
@@ -80,17 +86,17 @@ class ActivityView: UIView {
   
   private lazy var actionStackView: UIStackView = {
     let stackView = UIStackView(arrangedSubviews: [navigationButton, speakerButton, reviewButton, askButton])
-    stackView.axis = .horizontal
+    stackView.axis = .vertical
     stackView.distribution = .equalSpacing
-    stackView.spacing = 15
+    stackView.spacing = 25
     stackView.translatesAutoresizingMaskIntoConstraints =  false
     return stackView
   }()
   
   fileprivate lazy var mainScrollView: UIScrollView = {
     let scrollView = UIScrollView()
-    scrollView.addSubview(gradientView)
     scrollView.addSubview(photoImageView)
+    scrollView.addSubview(gradientView)
     scrollView.addSubview(actionStackView)
     scrollView.addSubview(mainStackView)
     scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -117,7 +123,7 @@ class ActivityView: UIView {
       gradientView.leftAnchor.constraint(equalTo: photoImageView.leftAnchor),
       
       actionStackView.topAnchor.constraint(equalTo: photoImageView.topAnchor, constant: 20),
-      actionStackView.rightAnchor.constraint(equalTo: photoImageView.rightAnchor, constant: -30),
+      actionStackView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -20),
       
       navigationButton.widthAnchor.constraint(equalToConstant: buttonHeight),
       navigationButton.heightAnchor.constraint(equalTo: navigationButton.widthAnchor),
@@ -175,6 +181,12 @@ class ActivityView: UIView {
   var photoImageUrl: URL? {
     didSet {
       photoImageView.fillWithURL(photoImageUrl, placeholder: "logo_usj")
+    }
+  }
+  
+  var photoImage: UIImage? {
+    didSet {
+      photoImageView.image = photoImage
     }
   }
   

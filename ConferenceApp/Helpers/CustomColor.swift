@@ -12,5 +12,8 @@ import UIKit
 struct CustomColor {
     //static let defaultColor = UIColor(named: "DefaultColor")
   static let defaultColor: UIColor = .blue
+  static let blueColor = UIColor(named: "BlueColor")
+  static let greenColor = UIColor(named: "GreenColor")
+  static let redColor = UIColor(named: "RedColor")
 }
 

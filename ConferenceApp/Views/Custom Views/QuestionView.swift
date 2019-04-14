@@ -21,6 +21,7 @@ class QuestionView: UIView {
     let button = UIHelper.roundedButton()
     //button.setBackgroundImage(UIImage(named: "ask"), for: .normal)
     button.setTitle("Preguntar", for: .normal)
+    button.backgroundColor = CustomColor.blueColor
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
