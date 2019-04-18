@@ -69,12 +69,6 @@ class CustomTableViewController: UITableViewController {
     customTableViewControllerDelegate?.cellSelected(object: item.object)
     
     onSelected?(item.object)
-    
-    /*let selectedItem = itemForIndexPath(indexPath)
-    let venue = PlaceViewController()
-    venue.item = selectedItem.object as? Venue
-
-    navigationController?.pushViewController(venue, animated: true)*/
   }
 
   

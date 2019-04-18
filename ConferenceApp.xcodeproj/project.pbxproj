@@ -28,6 +28,7 @@
 		EEB2E8AE2261F07400584B62 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AD2261F07400584B62 /* TracksViewController.swift */; };
 		EEB2E8B02263A91E00584B62 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8AF2263A91E00584B62 /* ActivityViewController.swift */; };
 		EEB2E8B22263C1AC00584B62 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8B12263C1AC00584B62 /* ReviewView.swift */; };
+		EEB2E8B422640F8000584B62 /* SocialFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB2E8B322640F8000584B62 /* SocialFeedTableViewController.swift */; };
 		EEF923DF22459B0400D05676 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923DE22459B0400D05676 /* Conference.swift */; };
 		EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E02245A66500D05676 /* RoundedTextView.swift */; };
 		EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF923E12245A66500D05676 /* AsyncImageView.swift */; };
@@ -85,6 +86,7 @@
 		EEB2E8AD2261F07400584B62 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 		EEB2E8AF2263A91E00584B62 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		EEB2E8B12263C1AC00584B62 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		EEB2E8B322640F8000584B62 /* SocialFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedTableViewController.swift; sourceTree = "<group>"; };
 		EEF923DE22459B0400D05676 /* Conference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		EEF923E02245A66500D05676 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		EEF923E12245A66500D05676 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				EEF923FF2245C20400D05676 /* TableViewData.swift */,
 				EEF924012246238400D05676 /* CustomTableViewCell.swift */,
 				EEB2E8A72261688400584B62 /* SocialFeedTableViewCell.swift */,
+				EEB2E8B322640F8000584B62 /* SocialFeedTableViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				EE0B6EB0224564BE006E7266 /* PlaceView.swift in Sources */,
 				EEF923F72245B2B000D05676 /* UIView+Animation.swift in Sources */,
 				EEF9241822465E6700D05676 /* Session.swift in Sources */,
+				EEB2E8B422640F8000584B62 /* SocialFeedTableViewController.swift in Sources */,
 				EEF923E52245A66500D05676 /* AsyncImageView.swift in Sources */,
 				EEB2E8B02263A91E00584B62 /* ActivityViewController.swift in Sources */,
 				EEF9241C22465F6800D05676 /* Talk.swift in Sources */,
