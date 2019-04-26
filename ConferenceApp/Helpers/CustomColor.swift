@@ -15,5 +15,6 @@ struct CustomColor {
   static let blueColor = UIColor(named: "BlueColor")
   static let greenColor = UIColor(named: "GreenColor")
   static let redColor = UIColor(named: "RedColor")
+  static let navColor = UIColor(named: "NavBlue")
 }
 
