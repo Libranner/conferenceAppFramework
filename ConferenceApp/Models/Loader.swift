@@ -25,6 +25,7 @@ struct Loader {
     var venueI : Venue
     venueI = Venue(name: "Universidad San Jorge", direction: "Autovía Mudéjar, km. 299, 50830 Villanueva de Gállego, Zaragoza", latitude: 41.755894, longitude: -0.8337806,
                    photoURL: URL(string: "https://bit.ly/2D7vcbc"))
+    venueI.rooms = [Room]()
     venueI.rooms?.append(Room(name: "Aula 6.1", direction: "Edificio de Estudiantes, Planta 0, USJ", latitude: 41.755756, longitude: -0.83306))
     venueI.rooms?.append(Room(name: "Aula 112", direction: "Escuela de Arquitectura y Tecnología Planta 1, USJ", latitude: 41.756855, longitude: -0.832464))
     venueI.rooms?.append(Room(name: "Aula 113 B", direction: "Edificio de Salud 1, Planta 1, USJ", latitude: 41.757206, longitude: -0.831869))
