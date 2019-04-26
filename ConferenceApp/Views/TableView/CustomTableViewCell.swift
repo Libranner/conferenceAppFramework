@@ -58,7 +58,7 @@ class CustomTableViewCell: UITableViewCell {
   }
   
   private func setupUI() {
-    contentView.backgroundColor = CustomColor.defaultColor
+    contentView.backgroundColor = CustomColor.blueColor
     contentView.addSubview(photoImageView)
     contentView.addSubview(gradientView)
     contentView.addSubview(dataStackView)

@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConferenceApp/Models/Conference.swift"
+            timestampString = "577961979.994123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "roomWithName(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ConferenceApp.Conference.roomWithName(Swift.String) -&gt; Swift.Optional&lt;ConferenceApp.Room&gt;"
+                  moduleName = "ConferenceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/libranner/Projects/master-usj/iOS/ConferenceApp/ConferenceApp/Models/Conference.swift"
+                  timestampString = "577961383.630601"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ConferenceApp.Venue) -&gt; () in ConferenceApp.Conference.roomWithName(Swift.String) -&gt; Swift.Optional&lt;ConferenceApp.Room&gt;"
+                  moduleName = "ConferenceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/libranner/Projects/master-usj/iOS/ConferenceApp/ConferenceApp/Models/Conference.swift"
+                  timestampString = "577961383.633262"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

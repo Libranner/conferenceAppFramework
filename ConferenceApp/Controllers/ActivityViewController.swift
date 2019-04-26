@@ -56,6 +56,7 @@ class ActivityViewController: UIViewController {
     activityView.askButton.addTarget(self, action: #selector(questionButtonTapped), for: .touchUpInside)
     activityView.speakerButton.addTarget(self, action: #selector(speakerButtonTapped), for: .touchUpInside)
     activityView.reviewButton.addTarget(self, action: #selector(reviewButtonTapped), for: .touchUpInside)
+    activityView.participantsButton.addTarget(self, action: #selector(participantsButtonTapped), for: .touchUpInside)
     
     NSLayoutConstraint.activate([
       activityView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -63,6 +64,19 @@ class ActivityViewController: UIViewController {
       activityView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       activityView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
       ])
+  }
+  
+  @objc fileprivate func participantsButtonTapped() {
+    if let participants = activity?.participants {
+      
+      var data = [TableViewData]()
+      participants.forEach({ (participant) in
+        data.append(TableViewData(title: participant.name, subtitle:"", imagePath: nil, object: participant as AnyObject))
+      })
+      
+      let participantsVC = CustomTableViewController(style: .plain, data: ["" : data], useDefaultBackground: false, onSelected: nil)
+      self.navigationController?.pushViewController(participantsVC, animated: true)
+    }
   }
   
   @objc fileprivate func navigationButtonTapped() {

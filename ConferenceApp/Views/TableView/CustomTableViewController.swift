@@ -17,10 +17,12 @@ class CustomTableViewController: UITableViewController {
   var data: [String: [TableViewData]]!
   var customTableViewControllerDelegate: CustomTableViewControllerDelegate?
   var onSelected: ((_ object: AnyObject?)->())?
+  var useDefaultBackground = true
   
-  convenience init(style: UITableView.Style, data: [String: [TableViewData]], onSelected:((_ object: AnyObject?)->())?) {
+  convenience init(style: UITableView.Style, data: [String: [TableViewData]], useDefaultBackground: Bool = true, onSelected:((_ object: AnyObject?)->())?) {
     self.init(style: style)
     self.data = data
+    self.useDefaultBackground = useDefaultBackground
     self.onSelected = onSelected
   }
   
@@ -88,7 +90,12 @@ class CustomTableViewController: UITableViewController {
       defaultImage = "https://png.pngtree.com/thumb_back/fw800/back_pic/00/04/95/525625bb4317fb9.jpg"
     }
     
-    cell.photoImageUrl = item.imagePath ?? URL(string: defaultImage)
+    if useDefaultBackground {
+      cell.photoImageUrl = item.imagePath ?? URL(string: defaultImage)
+    }
+    else {
+      cell.photoImageUrl = item.imagePath
+    }
     
     return cell
   }

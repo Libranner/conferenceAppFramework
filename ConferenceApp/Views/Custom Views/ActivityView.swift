@@ -62,6 +62,13 @@ class ActivityView: UIView {
     return button
   }()
   
+  lazy var participantsButton: RoundedButton = {
+    let button = UIHelper.roundedButton()
+    button.backgroundColor = CustomColor.greenColor
+    button.setTitle("Ver participantes", for: .normal)
+    return button
+  }()
+  
   lazy var reviewButton: RoundedButton = {
     let button = UIHelper.roundedButton()
     button.setBackgroundImage(UIImage(named: "review"), for: .normal)
@@ -83,7 +90,7 @@ class ActivityView: UIView {
   }()
   
   private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, roomLabel, detailLabel])
+    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, roomLabel, detailLabel, participantsButton])
     stackView.axis = .vertical
     stackView.distribution = .equalSpacing
     stackView.spacing = 15
