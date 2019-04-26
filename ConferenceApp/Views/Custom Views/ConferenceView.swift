@@ -24,14 +24,22 @@ class ConferenceView:  UIView {
   
   fileprivate lazy var nameLabel: UILabel = {
     let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 20)
     label.textColor = .white
     label.minimumScaleFactor = 0.7
     return label
   }()
   
+  fileprivate lazy var dateLabel: UILabel = {
+    let label = UIHelper.multiLineLabel()
+    label.font = UIFont.systemFont(ofSize: 15)
+    label.textColor = CustomColor.blueColor
+    return label
+  }()
+  
   fileprivate lazy var detailLabel: UILabel = {
     let label = UIHelper.multiLineLabel()
-    label.font = UIFont.systemFont(ofSize: 13)
+    label.font = UIFont.systemFont(ofSize: 14)
     label.textColor = .darkGray
     return label
   }()
@@ -43,10 +51,19 @@ class ConferenceView:  UIView {
   }()
   
   private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [nameLabel, detailLabel])
+    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, detailLabel])
     stackView.axis = .vertical
     stackView.distribution = .equalSpacing
     stackView.spacing = 15
+    stackView.translatesAutoresizingMaskIntoConstraints =  false
+    return stackView
+  }()
+  
+  private lazy var venuesStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.distribution = .equalSpacing
+    stackView.spacing = 10
     stackView.translatesAutoresizingMaskIntoConstraints =  false
     return stackView
   }()
@@ -56,13 +73,36 @@ class ConferenceView:  UIView {
     scrollView.addSubview(photoImageView)
     scrollView.addSubview(gradientView)
     scrollView.addSubview(mainStackView)
+    scrollView.addSubview(venuesStackView)
+    
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     return scrollView
   }()
   
+  fileprivate lazy var venuesHeaderStackView: UIStackView = {
+    
+    let headerStackView = UIStackView()
+    headerStackView.axis = .horizontal
+    headerStackView.distribution = .fill
+    
+    let icon = UIImage(named: "navigation")
+    let iconView = UIImageView(image: icon)
+    headerStackView.addArrangedSubview(iconView)
+    
+    let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = .black
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.text = " Venues:"
+    
+    headerStackView.addArrangedSubview(label)
+  
+    return headerStackView
+  }()
+  
   private func setupLayout() {
     self.addSubview(mainScrollView)
-    
+
     NSLayoutConstraint.activate([
       mainScrollView.topAnchor.constraint(equalTo: topAnchor),
       mainScrollView.rightAnchor.constraint(equalTo: rightAnchor),
@@ -82,7 +122,11 @@ class ConferenceView:  UIView {
       mainStackView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -30),
       mainStackView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
       mainStackView.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.95),
-      mainStackView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: 20)
+      
+      venuesStackView.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 30),
+      venuesStackView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+      venuesStackView.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.95),
+      venuesStackView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: 20)
       ])
   }
   
@@ -98,9 +142,31 @@ class ConferenceView:  UIView {
     }
   }
   
+  var formattedDate: String? {
+    didSet {
+      dateLabel.text = formattedDate
+    }
+  }
+  
   var photoImageUrl: URL? {
     didSet {
       photoImageView.fillWithURL(photoImageUrl, placeholder: "logo_usj")
+    }
+  }
+  
+  var venues: [Venue]? {
+    didSet {
+      if let venues = venues {
+        
+        venuesStackView.addArrangedSubview(venuesHeaderStackView)
+        venues.forEach({ (venue) in
+          let label = UILabel()
+          label.font = UIFont.systemFont(ofSize: 13)
+          label.textColor = .gray
+          label.text = " - \(venue.name)"
+          venuesStackView.addArrangedSubview(label)
+        })
+      }
     }
   }
   

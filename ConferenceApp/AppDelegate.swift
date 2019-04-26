@@ -15,6 +15,10 @@ class AppDvargate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
+    UINavigationBar.appearance().tintColor = .white
+    UINavigationBar.appearance().barTintColor = CustomColor.blueColor
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    
     let conferenceViewController = ConferenceViewController()
     conferenceViewController.tabBarItem.image = UIImage(named: "conference")
     conferenceViewController.title = "Conference"

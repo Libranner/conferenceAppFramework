@@ -9,11 +9,12 @@
 import UIKit
 
 class TracksViewController: CustomTableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.onSelected = cellSelected
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.onSelected = cellSelected
+    self.title = "Tracks"
+  }
   
   func cellSelected(object: AnyObject?) {
     guard let object = object else {
@@ -52,11 +53,11 @@ class TracksViewController: CustomTableViewController {
         activityVC.activity = activity as? Activity
         self?.navigationController?.pushViewController(activityVC, animated: true)
       }
-        
       
+      talksVC.title = "Actividades"
       self?.navigationController?.pushViewController(talksVC , animated: true)
     }
-    
+    vc.title = "Sesiones"
     self.navigationController?.pushViewController(vc , animated: true)
   }
 }

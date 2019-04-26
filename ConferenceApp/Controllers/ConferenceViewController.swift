@@ -28,6 +28,8 @@ class ConferenceViewController: UIViewController {
     conferenceView.name = conference.name
     conferenceView.detail = conference.details
     conferenceView.photoImageUrl = conference.logoPath
+    conferenceView.formattedDate = conference.formattedDate
+    conferenceView.venues = conference.venues
     conferenceView.translatesAutoresizingMaskIntoConstraints = false
 
     contentView.backgroundColor = .white

@@ -20,6 +20,10 @@ struct Conference {
   var participants: [Participant]?
   var socialFeeds: [SocialFeed]? = nil
   
+  var formattedDate: String {
+    return "\(DateHelper.dateToString(startDate)) - \(DateHelper.dateToString(endDate))"
+  }
+  
   func venueWithName(_ name: String) -> Venue? {
     return venues?.first { (v) -> Bool in
       v.name == name

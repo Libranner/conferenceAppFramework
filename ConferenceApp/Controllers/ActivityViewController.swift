@@ -75,6 +75,7 @@ class ActivityViewController: UIViewController {
       })
       
       let participantsVC = CustomTableViewController(style: .plain, data: ["" : data], useDefaultBackground: false, onSelected: nil)
+      participantsVC.title = "Participantes"
       self.navigationController?.pushViewController(participantsVC, animated: true)
     }
   }
