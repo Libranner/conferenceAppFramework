@@ -40,7 +40,6 @@ class SocialFeedTableViewCell: UITableViewCell {
   }
   
   private func setupUI() {
-    contentView.backgroundColor = CustomColor.defaultColor
     contentView.addSubview(iconImageView)
     contentView.addSubview(contentLabel)
     
@@ -63,16 +62,22 @@ class SocialFeedTableViewCell: UITableViewCell {
     }
   }
   
-  var socialNetwork: SocialNetwork {
+  var socialNetwork: SocialNetwork? {
     didSet {
       if socialNetwork == .facebook {
         iconImageView.image = UIImage(named: "facebook")
+        contentView.backgroundColor = CustomColor.defaultColor
+        contentLabel.textColor = .white
       }
       else if socialNetwork == .instagram {
         iconImageView.image = UIImage(named: "instagram")
+        contentView.backgroundColor = CustomColor.redColor
+        contentLabel.textColor = .black
       }
       else if socialNetwork == .twitter {
         iconImageView.image = UIImage(named: "twitter")
+        contentView.backgroundColor = CustomColor.blueColor
+        contentLabel.textColor = .black
       }
     }
   }

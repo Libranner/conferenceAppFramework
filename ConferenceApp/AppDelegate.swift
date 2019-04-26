@@ -31,7 +31,9 @@ class AppDvargate: UIResponder, UIApplicationDelegate {
     tracksViewController.tabBarItem.image = UIImage(named: "tracks")
     tracksViewController.title = "Tracks"
     
-    let socialFeedViewController = UINavigationController(rootViewController: SocialFeedViewController())
+    let social = [(SocialNetwork.facebook, "sadasd asdas")]
+    
+    let socialFeedViewController = UINavigationController(rootViewController: SocialFeedTableViewController(style: .plain, data: social))
     socialFeedViewController.tabBarItem.image = UIImage(named: "social_feed")
     socialFeedViewController.title = "Social Feed"
     
