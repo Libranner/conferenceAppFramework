@@ -34,6 +34,13 @@ class ActivityView: UIView {
     return label
   }()
   
+  fileprivate lazy var roomLabel: UILabel = {
+    let label = UIHelper.singleLineLabel()
+    label.font = UIFont.boldSystemFont(ofSize: 12)
+    label.textColor = CustomColor.defaultColor
+    return label
+  }()
+  
   fileprivate lazy var detailLabel: UILabel = {
     let label = UIHelper.multiLineLabel()
     label.font = UIFont.systemFont(ofSize: 13)
@@ -76,7 +83,7 @@ class ActivityView: UIView {
   }()
   
   private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, detailLabel])
+    let stackView = UIStackView(arrangedSubviews: [nameLabel, dateLabel, roomLabel, detailLabel])
     stackView.axis = .vertical
     stackView.distribution = .equalSpacing
     stackView.spacing = 15
@@ -153,6 +160,12 @@ class ActivityView: UIView {
   var detail: String? {
     didSet {
       detailLabel.text = detail
+    }
+  }
+  
+  var room: String? {
+    didSet {
+      roomLabel.text = room
     }
   }
   

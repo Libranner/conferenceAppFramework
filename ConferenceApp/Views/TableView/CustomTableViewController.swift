@@ -81,7 +81,14 @@ class CustomTableViewController: UITableViewController {
     
     cell.title = item.title
     cell.subtitle = item.subtitle
-    cell.photoImageUrl = item.imagePath
+    
+    var defaultImage = "https://ak8.picdn.net/shutterstock/videos/11205278/thumb/1.jpg"
+    
+    if indexPath.row % 2 == 0 {
+      defaultImage = "https://png.pngtree.com/thumb_back/fw800/back_pic/00/04/95/525625bb4317fb9.jpg"
+    }
+    
+    cell.photoImageUrl = item.imagePath ?? URL(string: defaultImage)
     
     return cell
   }

@@ -27,6 +27,18 @@ class ActivityViewController: UIViewController {
     }
   }
   
+  func fadeIn(view: UIView) {
+    view.alpha = 1
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.activityView.alpha = 0
+    UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+      self.fadeIn(view: self.activityView)
+    }, completion: nil)
+  }
+  
   fileprivate func load() {
     
     if activity is Talk {
@@ -116,6 +128,7 @@ class ActivityViewController: UIViewController {
     activityView.formattedDate = talk.formattedDate
     activityView.name = talk.name
     activityView.photoImage = UIImage(named: "talk_background")
+    activityView.room = talk.room?.name
     
     return activityView
   }
@@ -127,6 +140,7 @@ class ActivityViewController: UIViewController {
     activityView.formattedDate = workshop.formattedDate
     activityView.name = workshop.name
     activityView.photoImage = UIImage(named: "workshop_background")
+    activityView.room = workshop.room?.name
     
     return activityView
   }

@@ -9,11 +9,17 @@
 import UIKit
 
 class ConferenceViewController: UIViewController {
+  let contentView = UIView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     load()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    contentView.aboutAnimate()
   }
   
   func load() {
@@ -24,14 +30,22 @@ class ConferenceViewController: UIViewController {
     conferenceView.photoImageUrl = conference.logoPath
     conferenceView.translatesAutoresizingMaskIntoConstraints = false
 
-    view.addSubview(conferenceView)
+    contentView.backgroundColor = .white
+    contentView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(contentView)
+    contentView.addSubview(conferenceView)
     
     NSLayoutConstraint.activate([
-      conferenceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      conferenceView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      conferenceView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      conferenceView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+      contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      conferenceView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+      conferenceView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
+      conferenceView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+      conferenceView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
       ])
+
   }
   
   /*@objc func showTracksPressed() {
