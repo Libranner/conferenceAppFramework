@@ -143,6 +143,7 @@ class ActivityViewController: UIViewController {
     activityView.name = talk.name
     activityView.photoImage = UIImage(named: "talk_background")
     activityView.room = talk.room?.name
+    activityView.participantsButton.isHidden = !(talk.participants?.count ?? 0 > 0)
     
     return activityView
   }
@@ -155,7 +156,7 @@ class ActivityViewController: UIViewController {
     activityView.name = workshop.name
     activityView.photoImage = UIImage(named: "workshop_background")
     activityView.room = workshop.room?.name
-    
+    activityView.participantsButton.isHidden = !(workshop.participants?.count ?? 0 > 0)
     return activityView
   }
   

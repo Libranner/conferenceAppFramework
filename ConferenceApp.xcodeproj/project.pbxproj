@@ -59,7 +59,6 @@
 		EEF9241A22465EAE00D05676 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241922465EAE00D05676 /* Activity.swift */; };
 		EEF9241C22465F6800D05676 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241B22465F6800D05676 /* Talk.swift */; };
 		EEF9241E2246620900D05676 /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241D2246620900D05676 /* Workshop.swift */; };
-		EEF924202246667900D05676 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF9241F2246667900D05676 /* Loaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,7 +116,6 @@
 		EEF9241922465EAE00D05676 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EEF9241B22465F6800D05676 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		EEF9241D2246620900D05676 /* Workshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workshop.swift; sourceTree = "<group>"; };
-		EEF9241F2246667900D05676 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +166,6 @@
 		EE0B6EA8224551A2006E7266 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE38EBEE2257D56F00529DD5 /* Renders */,
 				EE0B6EA9224551B8006E7266 /* PlaceViewController.swift */,
 				EE0B6E9822455196006E7266 /* ViewController.swift */,
 				EE38EBEA2257D42700529DD5 /* ContentViewController.swift */,
@@ -202,13 +199,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EE38EBEE2257D56F00529DD5 /* Renders */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Renders;
-			sourceTree = "<group>";
-		};
 		EE4E86A22252CA4500EEDD69 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +230,6 @@
 				EEF9241922465EAE00D05676 /* Activity.swift */,
 				EEF9241B22465F6800D05676 /* Talk.swift */,
 				EEF9241D2246620900D05676 /* Workshop.swift */,
-				EEF9241F2246667900D05676 /* Loaders.swift */,
 				EEB2E8A92261C51F00584B62 /* Loader.swift */,
 			);
 			path = Models;
@@ -401,7 +390,6 @@
 				EEB2E8AC2261F06A00584B62 /* SocialFeedViewController.swift in Sources */,
 				EEF924062246390500D05676 /* Venue.swift in Sources */,
 				EEF923FE2245C1B300D05676 /* CustomTableViewController.swift in Sources */,
-				EEF924202246667900D05676 /* Loaders.swift in Sources */,
 				EEB2E8B22263C1AC00584B62 /* ReviewView.swift in Sources */,
 				EEF923DF22459B0400D05676 /* Conference.swift in Sources */,
 				EEF923E42245A66500D05676 /* RoundedTextView.swift in Sources */,
