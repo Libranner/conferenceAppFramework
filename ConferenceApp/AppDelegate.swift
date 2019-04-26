@@ -31,14 +31,18 @@ class AppDvargate: UIResponder, UIApplicationDelegate {
     tracksViewController.tabBarItem.image = UIImage(named: "tracks")
     tracksViewController.title = "Tracks"
     
-    let social = [(SocialNetwork.facebook, "sadasd asdas")]
+    var viewcontrollers = [conferenceViewController, tracksViewController]
     
-    let socialFeedViewController = UINavigationController(rootViewController: SocialFeedTableViewController(style: .plain, data: social))
-    socialFeedViewController.tabBarItem.image = UIImage(named: "social_feed")
-    socialFeedViewController.title = "Social Feed"
-    
+    if let feeds = conference.socialFeeds {
+      let socialFeedViewController = UINavigationController(rootViewController: SocialFeedTableViewController(style: .plain, data: feeds))
+      socialFeedViewController.tabBarItem.image = UIImage(named: "social_feed")
+      socialFeedViewController.title = "Social Feed"
+      
+      viewcontrollers.append(socialFeedViewController)
+    }
+
     let tabVC = UITabBarController()
-    tabVC.viewControllers = [conferenceViewController, tracksViewController, socialFeedViewController]
+    tabVC.viewControllers = viewcontrollers
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = tabVC

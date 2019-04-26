@@ -11,9 +11,9 @@ import UIKit
 class SocialFeedTableViewController: UITableViewController {
 
   let cellIdentifier = "CellIdentifier"
-  var data: [(SocialNetwork, String)]!
+  var data: [SocialFeed]!
   
-  convenience init(style: UITableView.Style, data: [(SocialNetwork,String)]) {
+  convenience init(style: UITableView.Style, data: [SocialFeed]) {
     self.init(style: style)
     self.data = data
   }
@@ -49,8 +49,8 @@ class SocialFeedTableViewController: UITableViewController {
     
     let item = data?[indexPath.row]
 
-    cell.socialNetwork = item?.0
-    cell.content = item?.1
+    cell.socialNetwork = item?.socialNetwork
+    cell.content = item?.hashtag
     
     return cell
   }
